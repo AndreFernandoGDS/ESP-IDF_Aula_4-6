@@ -26,7 +26,7 @@ void Task1(void * params){
 
 void Task2(void * params){
     while(1){
-        if(xSemaphoreTake(mutexBus,/*1000 / portTICK_PERIOD_MS*/ portMAX_DELAY)){
+        if(xSemaphoreTake(mutexBus,1000 / portTICK_PERIOD_MS)){
             writeBus("Realizando leitura de umidade \n");
             xSemaphoreGive(mutexBus);
         }else{
